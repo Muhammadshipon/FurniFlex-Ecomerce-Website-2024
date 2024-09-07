@@ -11,6 +11,7 @@ import SignIn from './Pages/SignIn';
 import AuthProvider from './Provider/AuthProvider';
 import Products from './Pages/Products';
 import PrivateRoute from './privateRoute/PrivateRoute';
+import ProductProvider from './Provider/ProductProvider';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
    <AuthProvider>
-   <RouterProvider router={router} />
+   <ProductProvider>
+ <RouterProvider router={router} />
+   </ProductProvider>
    </AuthProvider>
   </StrictMode>,
 )

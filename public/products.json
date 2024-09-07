@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Modern Rocking Chair",
+    "category": "Rocking Chair",
+    "price": 200,
+    "discount": 10,
+    "discountedPrice": 180,
+    "shortDescription": "A modern wooden rocking chair for comfort and style.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY6Yav13tQW_rFhEIgmmPNPIQ1-voX2AIItGKNvRceDHbCeSQ1Ovtzd7lqAtzd3bgll0k&usqp=CAU"
+  },
+  {
+    "id": 2,
+    "name": "Classic Wooden Rocking Chair",
+    "category": "Rocking Chair",
+    "price": 250,
+    "discount": 15,
+    "discountedPrice": 212.5,
+    "shortDescription": "A classic wooden rocking chair ideal for relaxation.",
+    "image": "https://m.media-amazon.com/images/I/514Pn4et3QL._AC_UF894,1000_QL80_.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Upholstered Side Chair",
+    "category": "Side Chair",
+    "price": 150,
+    "discount": 5,
+    "discountedPrice": 142.5,
+    "shortDescription": "An upholstered side chair, perfect for dining rooms.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkva1cFqQpc30Kjxh171fnTeLBba173TVjA&s"
+  },
+  {
+    "id": 4,
+    "name": "Vintage Side Chair",
+    "category": "Side Chair",
+    "price": 175,
+    "discount": 10,
+    "discountedPrice": 157.5,
+    "shortDescription": "A vintage-style side chair that brings elegance to any space.",
+    "image": "https://a.1stdibscdn.com/black-forest-carved-intricately-inlaid-walnut-musical-chair-swiss-ca-1900-for-sale/f_13022/f_282220021649870679409/f_28222002_1649870680680_bg_processed.jpg?width=240"
+  },
+  {
+    "id": 5,
+    "name": "Outdoor Lounge Chair",
+    "category": "Lounge Chair",
+    "price": 300,
+    "discount": 20,
+    "discountedPrice": 240,
+    "shortDescription": "A weather-resistant lounge chair for your outdoor spaces.",
+    "image": "https://cdn.rencdn.com/ashley/high/P802-820-ANGLE-SW-P1-KO.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Reclining Lounge Chair",
+    "category": "Lounge Chair",
+    "price": 350,
+    "discount": 15,
+    "discountedPrice": 297.5,
+    "shortDescription": "A reclining lounge chair with footrest for ultimate comfort.",
+    "image": "https://blackwolf.com.au/cdn/shop/products/BlackRecliningLounge_1000x.png?v=1617930906"
+  },
+  {
+    "id": 7,
+    "name": "Ergonomic Rocking Chair",
+    "category": "Rocking Chair",
+    "price": 280,
+    "discount": 12,
+    "discountedPrice": 246.4,
+    "shortDescription": "An ergonomic rocking chair designed for maximum comfort.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGp6kkbLw0JXA8fkJuP5NYfcL7ZN130Pvnzg&s"
+  },
+  {
+    "id": 8,
+    "name": "Leather Side Chair",
+    "category": "Side Chair",
+    "price": 220,
+    "discount": 10,
+    "discountedPrice": 198,
+    "shortDescription": "A sleek leather side chair that adds sophistication to any room.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ2v1Z8gQCOkmDQ5gF6Wrphx4mABvRb8yPxA&s"
+  },
+  {
+    "id": 9,
+    "name": "Luxury Lounge Chair",
+    "category": "Lounge Chair",
+    "price": 450,
+    "discount": 18,
+    "discountedPrice": 369,
+    "shortDescription": "A luxury lounge chair made with premium materials for indoor comfort.",
+    "image": "https://preview.free3d.com/img/2015/05/2174836401256793819/r4xc6nme.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Minimalist Lounge Chair",
+    "category": "Lounge Chair",
+    "price": 400,
+    "discount": 15,
+    "discountedPrice": 340,
+    "shortDescription": "A minimalist lounge chair with clean lines and a modern design.",
+    "image": "https://img.archiexpo.com/images_ae/projects/images-g/new-minimalist-design-lounge-chair-lina-furniture-25021-9909457.jpg"
+  }
+]
