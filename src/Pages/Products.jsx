@@ -1,4 +1,6 @@
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import ProductContainer from "../components/ProductContainer";
 
 
 const Products = () => {
@@ -7,7 +9,9 @@ const Products = () => {
       {/* navbar  */}
       <Navbar></Navbar>
       {/* product container*/}
+      <ProductContainer></ProductContainer>
       {/* footer */}
+      <Footer></Footer>
     </div>
   );
 };

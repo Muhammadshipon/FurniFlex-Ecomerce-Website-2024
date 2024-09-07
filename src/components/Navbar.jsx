@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaUserAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { PiHandbagBold } from "react-icons/pi";
 
 
 const Navbar = () => {
@@ -46,7 +47,10 @@ const Navbar = () => {
     </ul>
   </div>
 
-  <div className="navbar-end">
+  <div className="navbar-end ">
+ 
+  <span className=" text-4xl"><PiHandbagBold /></span>
+  <span className="relative right-5 top-2 text-white w-6 h-6 rounded-full bg-black flex items-center justify-center"><span>15</span></span>
   <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button"  className="btn btn-ghost btn-circle avatar">
         <div className="w-12 rounded-full bg-gray-100">
