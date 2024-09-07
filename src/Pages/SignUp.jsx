@@ -2,11 +2,122 @@ import { Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import bannerImage from "../assets/chris-lee-70l1tDAI6rM-unsplash 1.png";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+
+  const {createUser, googleLogIn,githubLogIn} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+
+  const handleSignUp = e=>{
+    e.preventDefault();
+   const fullName = firstName+" "+ lastName;
+
+
+    if(!/^(?=.*[a-z])(?=.*[A-Z]).*$/.test(password)){
+      
+      Swal.fire({
+        title: "Password Type is Wrong",
+        text: "Your password should have at least one upperCase and lowerCase character",
+        icon: "error"
+      });
+      return ;
+    }
+   
+    else if(password.length<6){
+      Swal.fire({
+        title: "Password Type is Wrong",
+        text: "password must be at least 6 character",
+        icon: "error"
+      });
+     return;
+    }
+
+
+
+
+
+
+    createUser(email,password)
+    .then(result=>{
+      console.log(result.user);
+   
+      // Update Profile 
+      updateProfile(result.user, {
+        displayName: fullName
+      }).then(() => {
+        
+      })
+      
+
+      Swal.fire({
+        title: "Sign Up Successfully",
+        icon: "success",
+        timer: 2000,
+      });
+
+      
+      navigate('/products');
+      
+    })
+    .catch(error=>{
+      console.log(error.message)
+      if(error.code==='auth/invalid-email'){
+        Swal.fire({
+          title: "Invalid Email",
+          icon: "error"
+        });
+      }
+     
+    })
+
+  }
+
+   // social Media logIn 
+
+   const handleGoogleLogIn =()=>{
+    googleLogIn()
+    .then(result=>{
+      console.log(result.user);
+      Swal.fire({
+        title: "Sign In Successfully",
+        icon: "success",
+        timer: 2000,
+      });
+      navigate("/products")
+    })
+    .catch(error=>{
+      console.log(error.message)
+    })
+  }
+
+  const handleGithubLogIn=()=>{
+    githubLogIn()
+  .then(result=>{
+    Swal.fire({
+      title: "Sign In Successfully",
+      icon: "success",
+      timer: 2000,
+    });
+    console.log(result.user);
+    navigate( "/products")
+  })
+  .catch(error=>{
+    console.log(error.message);
+   
+  })
+  }
 
   return (
     <div>
@@ -26,9 +137,12 @@ const SignUp = () => {
             </div>
 
             {/* Form */}
-            <form>
+            <form onSubmit={handleSignUp}>
               <div className="flex flex-col lg:flex-row gap-5">
                 <TextField
+                  name="firstName"
+                  value={firstName}
+                  onChange={(e)=>setFirstName(e.target.value)}
                   id="filled-basic"
                   label="First name (optional)"
                   variant="filled"
@@ -41,6 +155,9 @@ const SignUp = () => {
                   }}
                 />
                 <TextField
+                  name="lastName"
+                  value={lastName}
+                  onChange={(e)=>setLastName(e.target.value)}
                   id="filled-basic"
                   label="Last name (optional)"
                   variant="filled"
@@ -56,6 +173,11 @@ const SignUp = () => {
 
               <div className="mt-5">
                 <TextField
+                  required
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={(e)=>setEmail(e.target.value)}
                   className="w-full"
                   id="filled-basic"
                   label="Email Address"
@@ -71,6 +193,10 @@ const SignUp = () => {
 
               <div className="mt-5 relative">
                 <TextField
+                  required
+                  name="password"
+                  value={password}
+                  onChange={(e)=>setPassword(e.target.value)}
                   type={showPassword ? "text" : "password"}
                   className="w-full"
                   id="filled-basic"
@@ -103,15 +229,17 @@ const SignUp = () => {
                   control={<Checkbox />}
                   label="I agree to the Terms & Policy"
                   className="text-sm"
+                  required
                 />
               </div>
 
               <Button
+                type="submit"
                 className="w-full mt-4"
                 sx={{ backgroundColor: "black", padding: "10px" }}
                 variant="contained"
               >
-                Signup
+                Sign Up
               </Button>
             </form>
 
@@ -120,6 +248,7 @@ const SignUp = () => {
             {/* Social Media Sign In */}
             <div className="flex flex-col lg:flex-row justify-between gap-5 mt-4">
               <Button
+                onClick={handleGoogleLogIn}
                 variant="outlined"
                 size="medium"
                 className="w-full text-sm"
@@ -129,6 +258,7 @@ const SignUp = () => {
                 Sign In With Google
               </Button>
               <Button
+                onClick={handleGithubLogIn}
                 variant="outlined"
                 size="medium"
                 className="w-full"
@@ -153,7 +283,7 @@ const SignUp = () => {
               backgroundImage: `url(${bannerImage})`,
             }}
           >
-            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-overlay bg-opacity-0"></div>
             <div className="hero-content text-neutral-content text-center">
               <div className="max-w-md">
                 <div className="flex justify-center mb-2">
@@ -167,8 +297,7 @@ const SignUp = () => {
                   Furni<span className="text-blue-400">Flex</span>
                 </h1>
                 <p className="mb-5 text-sm lg:text-base">
-                  Discover a seamless shopping experience with our curated
-                  collection of products.
+                Discover a seamless shopping experience with our curated collection of products. From fashion to electronics, we bring quality.
                 </p>
               </div>
             </div>
