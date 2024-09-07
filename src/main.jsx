@@ -12,6 +12,9 @@ import AuthProvider from './Provider/AuthProvider';
 import Products from './Pages/Products';
 import PrivateRoute from './privateRoute/PrivateRoute';
 import ProductProvider from './Provider/ProductProvider';
+import OrderProductsProvider from './Provider/OrderProductsProvider';
+import ProductContainer from './components/ProductContainer';
+import OrderDetails from './components/OrderDetails';
 
 const router = createBrowserRouter([
   {
@@ -24,15 +27,30 @@ const router = createBrowserRouter([
   },
   {
     path:"/products",
-    element:<PrivateRoute><Products></Products></PrivateRoute>
+    element:<PrivateRoute><Products></Products></PrivateRoute>,
+    children:[
+      {
+        path:"/products",
+        element:<PrivateRoute><ProductContainer></ProductContainer></PrivateRoute>
+      },
+      {
+        path:'/products/order-details',
+        element:<PrivateRoute><OrderDetails></OrderDetails></PrivateRoute>
+      }
+    ]
   }
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
    <AuthProvider>
+   
+   
+   
    <ProductProvider>
+   <OrderProductsProvider>
  <RouterProvider router={router} />
+ </OrderProductsProvider>
    </ProductProvider>
    </AuthProvider>
   </StrictMode>,

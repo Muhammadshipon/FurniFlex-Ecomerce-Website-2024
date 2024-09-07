@@ -41,7 +41,7 @@ const ProductContainer = () => {
 
            {/*category side bar  */}
      <aside className="  p-8 border-x flex flex-col">
-      <div  onClick={()=>setCategory('')} className={`bg-white px-8 py-2 rounded-xl border-b hover:bg-black  hover:text-white font-semibold btn ${category===''?'bg-black text-white':'bg-white'}`}>
+      <div  onClick={()=>setCategory('')} className={`bg-white px-8 py-2 rounded-xl border-b hover:bg-black  hover:text-white font-semibold btn ${category===''?'bg-black text-white ':'bg-white'}`}>
         <p >All Products</p></div>
       <div  onClick={()=>setCategory('Rocking Chair')}  className={`bg-white px-8 py-2 rounded-xl border-b hover:bg-black  hover:text-white font-semibold btn ${category==='Rocking Chair'?'bg-black text-white':'bg-white'}`}>
         <p >Rocking Chair</p></div>

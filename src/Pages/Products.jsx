@@ -1,6 +1,8 @@
+import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ProductContainer from "../components/ProductContainer";
+import OrderDetails from "../components/OrderDetails";
 
 
 const Products = () => {
@@ -8,8 +10,11 @@ const Products = () => {
     <div>
       {/* navbar  */}
       <Navbar></Navbar>
-      {/* product container*/}
-      <ProductContainer></ProductContainer>
+
+      {/* product container and order details*/}
+      <Outlet>
+      </Outlet>
+     
       {/* footer */}
       <Footer></Footer>
     </div>

@@ -1,20 +1,28 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaUserAlt } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { PiHandbagBold } from "react-icons/pi";
+import { OrderProductsContext } from "../Provider/OrderProductsProvider";
 
 
 const Navbar = () => {
-  const navigate = useNavigate();
+  
+  const { orderProducts} = useContext(OrderProductsContext)
   const {user,logOutUser} = useContext(AuthContext);
+  // const [total,setTotal] = useState(0);
   const link=<>
    <li><a>Home</a></li>
-   <li className="bg-gray-100 rounded-xl font-semibold"><a>Products</a></li>
+   <NavLink to='/products'><li className="bg-gray-100 rounded-xl font-semibold"><a>Products</a></li></NavLink>
+   
    <li><a>Categories</a></li>
    <li><a>Custom</a></li>
    <li><a>Blog</a></li>    
              </>
+        
+   const totalNumberOfOrder =orderProducts?.reduce((sum,current)=>sum+current.quantity,0)
+  console.log(orderProducts); 
+            
   return (
     <div className="navbar bg-base-100 lg:px-14">
   <div className="navbar-start">
@@ -49,8 +57,12 @@ const Navbar = () => {
 
   <div className="navbar-end ">
  
-  <span className=" text-4xl"><PiHandbagBold /></span>
-  <span className="relative right-5 top-2 text-white w-6 h-6 rounded-full bg-black flex items-center justify-center"><span>15</span></span>
+ <Link to='/products/order-details'> 
+ <div className="flex hover:scale-125">
+ <span className=" text-4xl"><PiHandbagBold /></span>
+ <span className="relative right-5 top-4 text-white w-6 h-6 rounded-full bg-black flex items-center justify-center"><span>{totalNumberOfOrder}</span></span>
+ </div>
+ </Link>
   <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button"  className="btn btn-ghost btn-circle avatar">
         <div className="w-12 rounded-full bg-gray-100">
