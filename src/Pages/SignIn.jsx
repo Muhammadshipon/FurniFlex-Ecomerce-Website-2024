@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import logo from "../assets/Furniflexicon.png"
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -231,7 +232,7 @@ console.log(error.message);
               <div className="max-w-md">
                 <div className="flex justify-center mb-2">
                   <img
-                    src="/src/assets/Furniflexicon.png"
+                    src={logo}
                     alt=""
                     className="w-[50px] lg:w-[70px]"
                   />

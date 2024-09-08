@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaUserAlt } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { PiHandbagBold } from "react-icons/pi";
 import { OrderProductsContext } from "../Provider/OrderProductsProvider";
-
+import logo from "../assets/Furniflexicon.png"
 
 const Navbar = () => {
   
@@ -47,7 +47,7 @@ const Navbar = () => {
        {link}
       </ul>
     </div>
-    <a className="btn btn-ghost text-2xl"><img src="/src/assets/Furniflexicon.png" alt="" /><span>Furni<span className="text-blue-400">Flex</span></span></a>
+    <a className="btn btn-ghost text-3xl font-bold"><img src={logo} alt=""/><span>Furni<span className="text-blue-400">Flex</span></span></a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import logo from "../assets/Furniflexicon.png"
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -73,9 +74,9 @@ const SignUp = () => {
     })
     .catch(error=>{
       console.log(error.message)
-      if(error.code==='auth/invalid-email'){
+      if(error.code==='auth/email-already-in-use'){
         Swal.fire({
-          title: "Invalid Email",
+          title: "You already have an account.Please Sign",
           icon: "error"
         });
       }
@@ -291,7 +292,7 @@ const SignUp = () => {
               <div className="max-w-md">
                 <div className="flex justify-center mb-2">
                   <img
-                    src="/src/assets/Furniflexicon.png"
+                    src={logo}
                     alt=""
                     className="w-[50px] lg:w-[70px]"
                   />

@@ -40,16 +40,41 @@ const ProductContainer = () => {
     <div className="min-h-screen max-w-7xl mx-auto gap-5 flex flex-col md:flex-row my-16 px-6 justify-between items-center md:items-start">
 
            {/*category side bar  */}
-     <aside className="  p-8 border-x flex flex-col">
-      <div  onClick={()=>setCategory('')} className={`bg-white px-8 py-2 rounded-xl border-b hover:bg-black  hover:text-white font-semibold btn ${category===''?'bg-black text-white ':'bg-white'}`}>
-        <p >All Products</p></div>
-      <div  onClick={()=>setCategory('Rocking Chair')}  className={`bg-white px-8 py-2 rounded-xl border-b hover:bg-black  hover:text-white font-semibold btn ${category==='Rocking Chair'?'bg-black text-white':'bg-white'}`}>
-        <p >Rocking Chair</p></div>
-      <div  onClick={()=>setCategory('Side Chair')} className={`bg-white px-8 py-2 rounded-xl border-b hover:bg-black  hover:text-white font-semibold btn ${category==='Side Chair'?'bg-black text-white':'bg-white'}`}>
-        <p >Side Chair</p></div>
-      <div onClick={()=>setCategory('Lounge Chair')} className={`bg-white px-8 py-2 rounded-xl border-b hover:bg-black  hover:text-white font-semibold btn ${category==='Lounge Chair'?'bg-black text-white':'bg-white'}`}>
-        <p >Lounge Chair</p></div>
-     </aside>
+           <aside className="p-8 border-x flex flex-col">
+  <div
+    onClick={() => setCategory("")}
+    className={`px-4 py-2 rounded-xl border-b font-semibold btn hover:bg-black hover:text-white ${
+      category === "" ? "bg-black text-white" : "bg-white"
+    }`}
+  >
+    <p>All Products</p>
+  </div>
+  <div
+    onClick={() => setCategory("Rocking Chair")}
+    className={`px-4 py-2 rounded-xl border-b font-semibold btn hover:bg-black hover:text-white ${
+      category === "Rocking Chair" ? "bg-black text-white" : "bg-white"
+    }`}
+  >
+    <p>Rocking Chair</p>
+  </div>
+  <div
+    onClick={() => setCategory("Side Chair")}
+    className={`px-4 py-2 rounded-xl border-b font-semibold btn hover:bg-black hover:text-white ${
+      category === "Side Chair" ? "bg-black text-white" : "bg-white"
+    }`}
+  >
+    <p>Side Chair</p>
+  </div>
+  <div
+    onClick={() => setCategory("Lounge Chair")}
+    className={`px-4 py-2 rounded-xl border-b font-semibold btn hover:bg-black hover:text-white ${
+      category === "Lounge Chair" ? "bg-black text-white" : "bg-white"
+    }`}
+  >
+    <p>Lounge Chair</p>
+  </div>
+</aside>
+
 
           {/* product container section  */}
      <section >

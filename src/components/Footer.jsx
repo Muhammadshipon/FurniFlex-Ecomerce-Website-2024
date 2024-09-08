@@ -3,14 +3,14 @@ import { GiUsaFlag } from "react-icons/gi";
 import { GrInstagram } from "react-icons/gr";
 import { LuFacebook } from "react-icons/lu";
 import { SlSocialLinkedin } from "react-icons/sl";
-
+import logo from "../assets/Furniflexicon.png"
 
 const Footer = () => {
   return (
     <div className="bg-black">
       <footer className="footer  text-gray-400 p-10">
   <aside>
-  <a className="btn btn-ghost text-2xl text-white"><img src="/src/assets/Furniflexicon.png" alt="" /><span>Furni<span className="text-blue-400">Flex</span></span></a>
+  <a className="btn btn-ghost text-2xl text-white"><img src={logo} alt="" /><span>Furni<span className="text-blue-400">Flex</span></span></a>
   
   </aside>
   <nav>
