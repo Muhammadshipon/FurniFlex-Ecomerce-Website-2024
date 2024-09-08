@@ -15,6 +15,7 @@ import ProductProvider from './Provider/ProductProvider';
 import OrderProductsProvider from './Provider/OrderProductsProvider';
 import ProductContainer from './components/ProductContainer';
 import OrderDetails from './components/OrderDetails';
+import Checkout from './components/Checkout';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path:'/products/order-details',
         element:<PrivateRoute><OrderDetails></OrderDetails></PrivateRoute>
+      },
+      {
+        path:'/products/checkout',
+        element:<PrivateRoute><Checkout></Checkout></PrivateRoute>
       }
     ]
   }

@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ProductContainer from "../components/ProductContainer";
@@ -17,6 +17,7 @@ const Products = () => {
      
       {/* footer */}
       <Footer></Footer>
+      <ScrollRestoration></ScrollRestoration>
     </div>
   );
 };

@@ -69,6 +69,7 @@ const OrderProductsProvider = ({children}) => {
 
   const orderInfo ={
     orderProducts,
+    setOrderProducts,
     addToCart,
     removeFromCart,
     decreaseTheSameProductQuantity,

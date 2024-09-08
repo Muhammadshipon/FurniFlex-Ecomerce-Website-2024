@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { OrderProductsContext } from "../Provider/OrderProductsProvider";
 import { RxCross2 } from "react-icons/rx";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 
 const OrderDetails = () => {
@@ -60,7 +61,7 @@ const OrderDetails = () => {
       <div className="flex justify-between text-xl font-bold text-black border-t-2 py-3"><span>Total</span>${totalPrice}</div>
      
      </div>
-     <button className="max-w-[400px] btn w-full mt-6 bg-black text-white hover:text-black">GO TO CHECKOUT</button>
+    <Link to='/products/checkout'> <button className="max-w-[400px] btn w-full mt-6 bg-black text-white hover:text-black">GO TO CHECKOUT</button></Link>
       </section> 
       
    </div>

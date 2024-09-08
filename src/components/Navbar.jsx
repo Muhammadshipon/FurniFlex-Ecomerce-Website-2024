@@ -58,7 +58,7 @@ const Navbar = () => {
   <div className="navbar-end ">
  
  <Link to='/products/order-details'> 
- <div className="flex hover:scale-125">
+ <div className="flex hover:scale-110">
  <span className=" text-4xl"><PiHandbagBold /></span>
  <span className="relative right-5 top-4 text-white w-6 h-6 rounded-full bg-black flex items-center justify-center"><span>{totalNumberOfOrder}</span></span>
  </div>
