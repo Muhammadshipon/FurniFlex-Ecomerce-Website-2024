@@ -66,7 +66,7 @@ const SignUp = () => {
         icon: "success",
         timer: 2000,
       });
-
+      
       
       navigate('/products');
       
@@ -90,6 +90,7 @@ const SignUp = () => {
     googleLogIn()
     .then(result=>{
       console.log(result.user);
+      
       Swal.fire({
         title: "Sign In Successfully",
         icon: "success",
@@ -103,8 +104,10 @@ const SignUp = () => {
   }
 
   const handleGithubLogIn=()=>{
+    
     githubLogIn()
   .then(result=>{
+    
     Swal.fire({
       title: "Sign In Successfully",
       icon: "success",

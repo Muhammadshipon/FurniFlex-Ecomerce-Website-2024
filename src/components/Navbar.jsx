@@ -22,7 +22,7 @@ const Navbar = () => {
         
    const totalNumberOfOrder =orderProducts?.reduce((sum,current)=>sum+current.quantity,0)
   console.log(orderProducts); 
-            
+
   return (
     <div className="navbar bg-base-100 lg:px-14">
   <div className="navbar-start">
@@ -77,7 +77,19 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li onClick={()=> logOutUser()}><a>Logout</a></li>
+       <li onClick={() => {
+    logOutUser()
+      .then((res) => {
+        console.log(res); 
+        localStorage.removeItem("orderProducts");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      })
+      .catch((error) => {
+        console.error("Logout failed:", error);
+      });
+  }}>Logout</li>
       </ul>
     </div>
   </div>

@@ -41,6 +41,7 @@ else if(password.length<6){
 logInUser(email,password)
 .then(result=>{
   console.log(result.user);
+  
   Swal.fire({
     title: "SignIn Successfully",
     icon: "success"
@@ -64,7 +65,9 @@ logInUser(email,password)
 const handleGoogleLogIn =()=>{
 googleLogIn()
 .then(result=>{
+ 
   console.log(result.user);
+  
   Swal.fire({
     title: "SignIn Successfully",
     icon: "success"
@@ -80,6 +83,7 @@ googleLogIn()
 const handleGithubLogIn=()=>{
 githubLogIn()
 .then(result=>{
+  
 console.log(result.user);
 Swal.fire({
   title: "SignIn Successfully",
