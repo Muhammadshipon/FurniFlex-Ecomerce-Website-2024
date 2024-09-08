@@ -22,9 +22,7 @@ This project is an E-commerce Web Application built using React and Context API.
 3. **Install the dependencies:**
    ```bash
    npm install
-2. **Navigate to the project directory:**
-   ```bash
-   cd furniflex
+
 
 
 ## Usage
